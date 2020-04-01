@@ -27,27 +27,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
 
-  List<Icon> scoree = [
-    Icon(
-              Icons.check,
-              color:Colors.green,
-            ),
-            Icon(
-              Icons.close,
-              color:Colors.red,
-            ),
-            Icon(
-              Icons.close,
-              color:Colors.red,
-            ),
-            Icon(
-              Icons.close,
-              color:Colors.red,
-            ),
-            Icon(
-              Icons.close,
-              color:Colors.red,
-            ),];
+  List<Icon> scoree = [];
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +90,14 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked false.
+                setState(() {
+                  scoree.add(
+                    Icon(
+                      Icons.close,
+                    color: Colors.red,
+                  ),
+                  );
+                });
               },
             ),
           ),
