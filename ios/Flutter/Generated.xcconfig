@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=C:\flutter
-FLUTTER_APPLICATION_PATH=C:\Users\RahulMahesh\Desktop\New folder (2)\New folder\Flutter\quizzer\quizzler-flutter
+FLUTTER_APPLICATION_PATH=C:\Users\RahulMahesh\Desktop\New folder (2)\New folder\Flutter\quizzler-flutter-challenge-starting
 FLUTTER_TARGET=lib\main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build\ios
