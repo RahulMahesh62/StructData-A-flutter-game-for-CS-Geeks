@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:structdata/Question.dart';
+import 'Question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -29,31 +31,19 @@ class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoree = [];
 
-  List<String> questions = [
-    'A stack is called a LIFO data structure.',
-    'An array is a random access data structure; a stack is not.',
-    'Stacks can be used to print a list backwards without using recursion.',
-    'You cannot write a recursive algorithm to implement a sequential search algorithm.',
-    'To access the fifth element in a list, we must first traverse the first four elements.',
-    'The recursive algorithm must have three or more base cases.',
-    'A function that calls itself is an iterative function.',
-    'A queue cannot be implemented using in an array.',
-    'Every node in a linked list has two components: one to store the relevant information and one to store the address.T',
-    'Building a linked list backwards places the new item to be added at the end of the linked list.',
+  List<Question> questionBank = [
+    Question(q:'A stack is called a LIFO data structure.', a: true),
+    Question(q:'An array is a random access data structure; a stack is not.', a: true),
+    Question(q:'Stacks can be used to print a list backwards without using recursion.', a: true),
+    Question(q:'You cannot write a recursive algorithm to implement a sequential search algorithm.', a: false),
+    Question(q:'To access the fifth element in a list, we must first traverse the first four elements.', a: true),
+    Question(q:'The recursive algorithm must have three or more base cases.', a: false),
+    Question(q:'A function that calls itself is an iterative function.', a: false),
+    Question(q:'A queue cannot be implemented using in an array.', a: false),
+    Question(q:'Every node in a linked list has two components: one to store the relevant information and one to store the address.', a: true),
+    Question(q:'Building a linked list backwards places the new item to be added at the end of the linked list.', a: false),
   ];
 
-  List<bool> answers = [
-    true,
-    true,
-    true,
-    false,
-    true,
-    false,
-    false,
-    false,
-    true,
-    false,
-  ];
 
   int questionn=0;
 
@@ -69,7 +59,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionn],
+                questionBank[questionn].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -93,7 +83,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns = answers[questionn];
+                bool correctAns = questionBank[questionn].questionAnswer;
                 if(correctAns==true){
                   print('right');
                 }
@@ -120,7 +110,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns = answers[questionn];
+                bool correctAns = questionBank[questionn].questionAnswer;
                 if(correctAns==false){
                   print('right');
                 }
